@@ -1,0 +1,93 @@
+/*empezamos con sass*/
+
+//variables
+$color-principal:orange;
+$color-secundario: rgb(47, 44, 44);
+$color-tipografia1: white;
+$color-tipografia2: black;
+
+//nesting
+
+.main-index{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1.5fr 1fr 1fr 0.5fr;
+ 
+    grid-template-areas:
+    "main-p main-p"
+    "imagen-uno imagen-dos"
+    "imagen-tres imagen-cuatro"
+    "parrafo parrafo";
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: $color-principal;
+    .main-p{
+        grid-area: main-p;
+        text-align: center;
+        font-weight: bold;
+        color: $color-tipografia2;
+        font-size: 1.2rem;
+        line-height: 1rem;
+    }
+    .imagen-uno{
+        grid-area: imagen-uno;
+    }
+    .imagen-dos{
+        grid-area: imagen-dos;
+    }
+    .iamgen-tres{
+        grid-area: imagen-tres;
+    }
+    .iamgen-cuatro{
+        grid-area: imagen-cuatro;
+    }
+    p{
+        grid-area: parrafo;
+        color: $color-tipografia1;
+    }
+}
+ 
+footer{
+    background-color: $color-principal;
+    p{
+        text-align: center;
+        color: $color-secundario;
+    }
+}
+
+ 
+ 
+ 
+/*mediaqueries*/
+@media screen and (min-width: 600px){
+    .main-index{
+        grid-template-areas:
+        "main-p main-p main-p main-p"
+        "imagen-uno imagen-dos"
+        "imagen-tres imagen-cuatro"
+        "parrafo parrafo parrafo parrafo";
+        column-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        .main-p{
+            font-size: 1.5rem;
+        }
+    }
+}
+ 
+@media screen and (min-width: 1024px){
+
+   .main-index{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "main-p main-p main-p main-p"
+    "imagen-uno imagen-dos imagen-tres imagen-cuatro"
+    "parrafo parrafo parrafo parrafo";
+    column-gap: 1rem;
+   }
+}
+ 
+
